@@ -1,0 +1,413 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ========== Global Reset ========== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f8f9fa; 
+  min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif;
+  margin: 0;
+}
+
+/* ========== Layout ========== */
+main {
+  padding-bottom: 40px;
+}
+
+/* ========== Navbar ========== */
+.navbar-brand {
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* ========== Tables ========== */
+.table {
+  background-color: #ffffff;
+}
+
+.table th,
+.table td {
+  vertical-align: middle;
+}
+
+.table td {
+  word-break: break-word;
+}
+
+/* ========== Forms ========== */
+.form label {
+  font-weight: 500;
+}
+
+.form-control,
+textarea {
+  border-radius: 6px;
+}
+
+/* ========== Buttons ========== */
+.btn {
+  border-radius: 6px;
+}
+
+/* ========== Cards ========== */
+.card {
+  border-radius: 10px;
+}
+
+.details-card {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ========== Errors & Alerts ========== */
+.alert {
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+/* ========== Loader ========== */
+.loader-container {
+  height: 60vh;
+}
+
+
+.hover-scale:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  backdrop-filter: blur(2px);
+}
+
+.modal-content-custom {
+  background: white;
+  width: 90%;
+  max-width: 450px;
+  overflow: hidden;
+}
+
+/* Global Scrollbar Reset - Prevents the 'jump' from default to custom */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0d6efd; /* Your primary blue */
+}
+
+/* Custom Scrollbar for the scrollable container */
+#scrollableDiv::-webkit-scrollbar {
+  width: 8px;
+}
+
+#scrollableDiv::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+#scrollableDiv::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 10px;
+  border: 2px solid #f1f1f1;
+}
+
+#scrollableDiv::-webkit-scrollbar-thumb:hover {
+  background: #0d6efd; /* Primary blue on hover */
+}
+
+/* Back to Top Button Animation */
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 1050;
+  transition: all 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+}
+
+.back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Container for the table and scroll logic */
+.users-table-container {
+  height: 65vh;
+  min-height: 450px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-gutter: stable;
+  position: relative;
+  background: white;
+}
+
+/* Back to Top button inside the scrollable area */
+.scroll-to-top-btn {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px auto; /* Centers it horizontally at the bottom */
+  transition: all 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+}
+
+.scroll-to-top-btn.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Custom Scrollbar for the table div */
+.users-table-container::-webkit-scrollbar {
+  width: 6px;
+}
+.users-table-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+.users-table-container::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+.users-table-container::-webkit-scrollbar-thumb:hover {
+  background: #0d6efd;
+}
+
+/* Profile Image Styling */
+.user-details-avatar {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+}
+
+/* Typography Utilities */
+.tracking-wider {
+  letter-spacing: 0.05em;
+}
+
+.tracking-widest {
+  letter-spacing: 0.1em;
+}
+
+.break-all {
+  word-break: break-all;
+}
+
+/* Re-using your existing hover effect */
+.hover-scale:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+/* Re-using your existing fade-in */
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* User Form Profile Preview */
+.form-profile-preview {
+  width: 130px;
+  height: 130px;
+  object-fit: cover;
+}
+
+/* Form Section Divider */
+.form-hr {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  opacity: 0.15;
+}
+
+/* Transitions for interactive elements */
+.btn-transition {
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-transition:hover {
+  transform: translateY(-1px);
+}
+
+/* 404 Page Styles */
+.not-found-container {
+  min-height: 80vh;
+}
+
+.not-found-icon-circle {
+  width: 120px;
+  height: 120px;
+}
+
+.not-found-description {
+  max-width: 400px;
+}
+
+/* Ensure the title stands out */
+.display-1 {
+  font-size: 6rem;
+  line-height: 1.1;
+}
+
+/* Table Specific Layout Classes */
+.table-header-width-small { width: 80px; }
+.table-header-width-action { width: 100px; }
+
+.table-avatar {
+  width: 45px;
+  height: 45px;
+  object-fit: cover;
+}
+
+/* Status Badge Styling */
+.status-badge-pill {
+  font-size: 0.75rem;
+  padding: 0.4em 0.8em;
+}
+
+.status-dot-indicator {
+  font-size: 8px;
+}
+
+/* Action Menu Button Styling */
+.action-menu-btn {
+  width: 32px;
+  height: 32px;
+}
+
+/* Sticky Header Logic */
+.z-index-10 {
+  z-index: 10;
+}
+
+.top-0 {
+  top: 0;
+}
+
+
+/* Loader Container */
+.loader-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.3s ease;
+}
+
+/* Default state (fits inside a card/div) */
+.loader-contained {
+  height: 300px;
+  background-color: transparent;
+}
+
+/* Full screen state (for initial app loads) */
+.loader-full-page {
+  height: 80vh;
+  background-color: rgba(255, 255, 255, 0.8); /* Slight transparency */
+}
+
+.loader-text {
+  letter-spacing: 0.5px;
+  opacity: 0.8;
+}
+
+/* Base Loader Container */
+.loader-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Local/In-Page State */
+.loader-local {
+  min-height: 200px;
+  margin-top: 3rem; /* Replaces mt-5 */
+}
+
+/* Full Screen Overlay State */
+.loader-overlay {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(2px); /* Adds a professional frosted glass effect */
+}
+
+.loader-text {
+  letter-spacing: 0.5px;
+}
+
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.tracking-wider { letter-spacing: 0.05em; }
+.tracking-widest { letter-spacing: 0.1em; }
+
+/* ========== Responsive Tweaks ========== */
+@media (max-width: 768px) {
+  .table {
+    font-size: 14px;
+  }
+
+  .btn {
+    margin-bottom: 4px;
+  }
+}

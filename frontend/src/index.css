@@ -182,7 +182,6 @@ textarea {
   overflow-y: auto;
   overflow-x: hidden;
   scrollbar-gutter: stable;
-  position: relative;
   background: white;
 }
 
@@ -388,7 +387,21 @@ textarea {
   letter-spacing: 0.5px;
 }
 
-add these styling in  index.css
+/* Ensure dropdowns can float outside the scrollable area */
+.table-responsive,
+.users-table-container {
+  overflow: visible !important;
+}
+
+/* If using InfiniteScroll, we must target the internal div it creates */
+.infinite-scroll-component {
+  overflow: visible !important;
+}
+
+/* Specifically for the last few rows where the menu might go 'down' out of view */
+.dropdown-menu {
+  z-index: 1060; /* Higher than the sticky header */
+}
 /* Navbar Spacing & Interaction */
 .navbar-nav .nav-link {
   transition: all 0.2s ease-in-out;

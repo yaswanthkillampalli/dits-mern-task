@@ -81,6 +81,7 @@ const UserTable = ({ users = [], onDelete }) => {
                       <button 
                         className="btn btn-light btn-sm rounded-circle d-flex align-items-center justify-content-center mx-auto action-menu-btn" 
                         data-bs-toggle="dropdown"
+                        data-bs-boundary="viewport"
                       >
                         <MoreVertical size={16} className="text-muted" />
                       </button>

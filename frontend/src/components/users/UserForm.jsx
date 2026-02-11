@@ -60,7 +60,11 @@ const UserForm = ({ onSubmit, defaultValues = {}, isEdit }) => {
                   <input
                     placeholder="Enter full name"
                     className={`form-control shadow-none ${errors.name ? "is-invalid" : ""}`}
-                    {...register("name", { required: "Name is required", minLength: { value: 3, message: "Min 3 characters" } })}
+                    {...register("name", { 
+                      required: "Name is required", 
+                      minLength: { value: 3, message: "Min 3 characters" },
+                      pattern: { value: /^[a-zA-Z\s]+$/, message: "Name can only contain letters and spaces" }
+                    })}
                   />
                   {errors.name && <div className="invalid-feedback small">{errors.name.message}</div>}
                 </div>
@@ -72,7 +76,7 @@ const UserForm = ({ onSubmit, defaultValues = {}, isEdit }) => {
                     className={`form-control shadow-none ${errors.email ? "is-invalid" : ""}`}
                     {...register("email", { 
                       required: "Email is required", 
-                      pattern: { value: /^\S+@\S+$/i, message: "Invalid email format" } 
+                      pattern: { value: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/, message: "Please enter a valid email address" } 
                     })}
                   />
                   {errors.email && <div className="invalid-feedback small">{errors.email.message}</div>}

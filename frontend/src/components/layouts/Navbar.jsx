@@ -7,15 +7,17 @@ const Navbar = () => {
   const isActive = (path) => (location.pathname === path ? "active" : "");
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm py-3">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm py-3 sticky-top">
       <div className="container">
-        <Link className="navbar-brand fw-bold d-flex align-items-center gap-2" to="/">
+        {/* Brand - Added flex-shrink-0 to prevent text squashing */}
+        <Link className="navbar-brand fw-bold d-flex align-items-center gap-2 flex-shrink-0" to="/">
           <Users size={24} strokeWidth={2.5} className="text-primary" />
           <span className="lh-1">User Management</span>
         </Link>
 
+        {/* Toggler */}
         <button 
-          className="navbar-toggler border-0 shadow-none" 
+          className="navbar-toggler border-0 shadow-none p-2" 
           type="button" 
           data-bs-toggle="collapse" 
           data-bs-target="#navbarNav"
@@ -28,10 +30,11 @@ const Navbar = () => {
 
         {/* Menu Items */}
         <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav ms-auto mb-2 mb-lg-0 gap-lg-3">
+          {/* Added mt-3 for mobile to give space below the brand, mt-lg-0 for desktop */}
+          <ul className="navbar-nav ms-auto mb-2 mb-lg-0 gap-lg-3 mt-3 mt-lg-0">
             <li className="nav-item">
               <Link 
-                className={`nav-link d-flex align-items-center gap-2 ${isActive("/")}`} 
+                className={`nav-link d-flex align-items-center gap-2 px-3 py-2 rounded-3 transition-all ${isActive("/")}`} 
                 to="/"
               >
                 <Users size={18} />
@@ -40,7 +43,7 @@ const Navbar = () => {
             </li>
             <li className="nav-item">
               <Link 
-                className={`nav-link d-flex align-items-center gap-2 ${isActive("/users/add")}`} 
+                className={`nav-link d-flex align-items-center gap-2 px-3 py-2 rounded-3 transition-all ${isActive("/users/add")}`} 
                 to="/users/add"
               >
                 <UserPlus size={18} />

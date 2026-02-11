@@ -388,6 +388,46 @@ textarea {
   letter-spacing: 0.5px;
 }
 
+add these styling in  index.css
+/* Navbar Spacing & Interaction */
+.navbar-nav .nav-link {
+  transition: all 0.2s ease-in-out;
+  color: rgba(255, 255, 255, 0.75) !important;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #fff !important;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.navbar-nav .nav-link.active {
+  color: #fff !important;
+  background-color: rgba(13, 110, 253, 0.15); /* Primary blue with low opacity */
+  font-weight: 500;
+}
+
+/* Mobile Specific Spacing Fixes */
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    /* Added padding to the collapsed menu background */
+    padding-bottom: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 0.75rem;
+  }
+
+  .nav-item {
+    /* Ensure links take full width and are easy to tap */
+    width: 100%;
+    margin-bottom: 0.25rem;
+  }
+}
+
+.navbar-brand span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }
